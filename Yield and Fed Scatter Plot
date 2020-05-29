@@ -1,0 +1,13 @@
+from matplotlib import pyplot as plt
+import pandas as pd
+
+df = pd.read_excel (r'C:\Users\Isaac\Downloads\SP.xlsx')
+funds_rate = list(df['DFF'])
+yeild = list(df['DGS30'])
+
+
+plt.scatter(funds_rate, yeild)
+plt.title('30 year yield to FFR')
+plt.xlabel('Federal Funds Rate')
+plt.ylabel('30 year yield')
+plt.show()
