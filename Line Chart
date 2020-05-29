@@ -1,0 +1,13 @@
+from matplotlib import pyplot as plt
+import pandas as pd
+
+
+df = pd.read_excel (r'C:\Users\Isaac\Desktop\UNR2.xlsx')
+date = list(df['date'])
+rates = list(df['rate'])
+print(rates)
+
+plt.plot(date, rates, color='blue', marker='o', linestyle='solid')
+plt.title('Unemployment Rate')
+plt.ylabel('Percent')
+plt.show()
