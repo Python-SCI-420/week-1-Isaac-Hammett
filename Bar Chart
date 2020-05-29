@@ -1,0 +1,24 @@
+from matplotlib import pyplot as plt
+import pandas as pd
+import numpy as np
+from textwrap import wrap
+df = pd.read_excel (r'C:\Users\Isaac\Desktop\industry.xlsx')
+
+industry = list(df['Industry'])
+febuary_rate = list(df['Feb'])
+march_rate = list(df['March'])
+index = np.arange(len(industry))
+
+graph_feb = plt.bar(x=industry, height=febuary_rate, width=0.35,)
+graph_march = plt.bar(x=industry, height=march_rate, width=0.35,)
+
+industry = ['\n'.join(wrap(industry, 4)) for industry in industry]
+plt.bar(range(len(industry)), febuary_rate)
+
+plt.xticks(index, industry)
+plt.title('Layoffs by Industry')
+plt.ylabel('Layoff by Percent')
+plt.xlabel('Industry')
+
+
+plt.show()
